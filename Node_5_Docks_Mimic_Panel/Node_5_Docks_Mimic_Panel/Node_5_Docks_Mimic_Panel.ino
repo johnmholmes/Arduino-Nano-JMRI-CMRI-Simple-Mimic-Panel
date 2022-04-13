@@ -9,13 +9,13 @@
 //      MIMIC PANEL LEDS
 // pin 3 //  T1C peel platform 1  5001
 // pin 4 //  T1T peel platform 2  5002
-// pin 5 //  T2T Dock approach    5003
+// pin 5 //  T2T dock approach    5003
 // pin 6 //  T3C dock platform 1  5004
 // pin 7 //  T3T dock platform 2  5005
 // pin 8 //  T4C dock siding      5006
-// pin 9 //  DS1 dock siding occuppied 5007
-// pin 10 // PL1 peel platform 1 occuppied 5008
-// pin 11 // PL2 peel platform 2 occuppied 5509
+// pin 9 //  DS1 dock siding occupied 5007
+// pin 10 // PL1 peel platform 1 occupied 5008
+// pin 11 // PL2 peel platform 2 occupied 5509
 // pin 12 // not used
 // pin 13 // not used
 // pin A0 // D1P1 dock platform 1 to peel 1 switch  5001
@@ -29,14 +29,14 @@
 
 
 #define CMRI_ADDR 5
-//willaston mimic panel leds
+//Docks mimic panel leds
 #define T1C 3       //jmri address 5001 led 6 leds for turn outs
 #define T1T 4       //5002
 #define T2T 5       //5003
 #define T3C 6       //5004
 #define T3T 7       //5005
 #define T4C 8       //5006
-#define DS1 9       //5007 block occuppied led 3 leds for block detection
+#define DS1 9       //5007 block occupied led 3 leds for block detection
 #define PL1 10      //5008
 #define PL2 11      //5009
 // pin 12 and 13 not used
@@ -65,7 +65,7 @@ void setup() {
   pinMode (PL1, OUTPUT);  //5008
   pinMode (PL2, OUTPUT);  //5009
 
-  //willaston platform 1 routes
+  //Dock routes buttons
   pinMode (D1P1, INPUT_PULLUP);// peel 1  5001
   pinMode (D1P2, INPUT_PULLUP);// peel 2  5002
   pinMode (D2P1, INPUT_PULLUP);// peel 1  5003
@@ -97,6 +97,6 @@ void loop() {
   cmri.set_bit(3, !digitalRead(A3)); //jmri 5004
   cmri.set_bit(4, !digitalRead(12)); //jmri 5005
 
-  
+
 
 }
